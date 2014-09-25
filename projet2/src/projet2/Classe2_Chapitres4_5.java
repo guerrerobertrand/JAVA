@@ -55,18 +55,53 @@ switch(note)
 		*/
 
 		// une boucle while
-String prenom; // variable vide qui prend la saisie clavier
+/*String prenom; // variable vide qui prend la saisie clavier
 char reponse='O'; // initialisation ˆ Oui 'O'
 Scanner sc = new Scanner(System.in);
-// Tant que la rponse est Oui tu excute
+// Tant que la rponse est Oui tu excutes
 while (reponse == 'O')
 {
 	System.out.println("Donnez un prnom : ");
 	prenom =sc.nextLine();
 	System.out.println("Bonjour "+prenom+" comment vas tu ?");
-	System.out.println("Voulez vous recommencez ? O/N ");
-	reponse=sc.nextLine().charAt(0);
-}
+	
+	//Deuxime boucle (imbrique) = initialisation sinon on ne rentre jamais dedans.
+	reponse = ' ';
+	while (reponse != 'O' && reponse != 'N')
+		{
+		System.out.println("Voulez vous recommencez ? Rpondre par O/N ");
+		reponse=sc.nextLine().charAt(0);
+		}
+		
+} // RETOUR en dbut de boucle tant que la condition est respecte
+System.out.println("Aurevoir, merci ! ");
+//FIN de boucle
+*/	
+/*
+		// une boucle Do...While structure et foncitonnement assez similaire
+		
+		String prenom; // variable vide qui prend la saisie clavier
+		char reponse=' '; // plus besoin d'initialiser la variable, on rentre une fois dans la boucle et on sort si la condition n'est pas vrifie
+
+		Scanner sc = new Scanner(System.in);
+		
+		do{
+			System.out.println("Donnez un prnom : ");
+			prenom =sc.nextLine();
+			System.out.println("Bonjour "+prenom+" comment vas tu ?");
+			do{
+				System.out.println("Voulez vous recommencez ? Rpondre par O/N ");
+				reponse=sc.nextLine().charAt(0);
+				}while(reponse!= 'O' && reponse !='N');
+				
+		}while (reponse == 'O');
+		System.out.println("Aurevoir, merci ! ");
+		//FIN de boucle
+*/
+		// une boucle for
+		
+		for(int i =10; i >=0; i--)
+			System.out.println("Il reste "+i+" lignes ˆ crire !");
 		
 	}
 }
