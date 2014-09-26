@@ -15,7 +15,7 @@ public class Classe_Chapitre7 {
 	
 	do{//Boucle Principale
 		do{//On répète cette boucle tant que la lettre saisie n'est pas dans le tableau
-			i=0;
+			i=0;//remise à zéro du compteur
 			System.out.println("Rentrez une lettre minuscule, SVP ?");
 			carac=sc.nextLine().charAt(0);
 			//Boucle de recherche dans le tableau
