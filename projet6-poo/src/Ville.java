@@ -1,14 +1,14 @@
 
 public class Ville {
 
-	private String nomVille;
-	private String nomPays;
-	private int nbreHabitants;
-	private char categorie;
+	protected String nomVille;
+	protected String nomPays;
+	protected int nbreHabitants;
+	protected char categorie;
 	
 	//variables de classes qui vont compter les instances
 	public static int nbreInstances =0;
-	private static int nbreInstancesBis=0;
+	protected static int nbreInstancesBis=0;
 	
 	
 	//Constructeur par défaut
@@ -26,8 +26,13 @@ public class Ville {
 	}
 	
 	//Constructeur avec paramètres (méthode surchargée...)
-	public Ville(String pNom, int pNbre, String pPays){
+	public Ville(String pNom, int pNbre, String pPays)
+		throws NombreHabitantException{
 		
+		if(pNbre<0)
+			throw new NombreHabitantException(pNbre);
+		else
+		{
 		//On incrémente nos variables à chaque appel des constructeurs
 		nbreInstances++;
 		nbreInstancesBis++;
@@ -38,7 +43,7 @@ public class Ville {
 		nbreHabitants=pNbre;
 		this.setCategorie();
 	}
-	
+	}	
 	//ACCESSEURS
 	
 	public String getNom(){
@@ -87,11 +92,15 @@ public class Ville {
 		this.categorie=categories[i];
 	}
 
-	//Retourne la desciption de la ville
+	//Retourne la description de la ville
 	public String decrisToi(){
 		return "\t"+this.nomVille+" est une ville de "+this.nomPays+", elle comporte : "+this.nbreHabitants+" habitant(s). Elle est de catégorie : "+this.categorie;
 	}
 
+	public String toString(){
+		return "\t"+this.nomVille+" est une ville de "+this.nomPays+", elle comporte"+this.nbreHabitants+ "=> elle est de categrorie: "+this.categorie;
+	}
+	
 	//Retourne une chaine de caractères selon le résultat de la comparaison
 	public String comparer(Ville v1){
 		String str=new String();
