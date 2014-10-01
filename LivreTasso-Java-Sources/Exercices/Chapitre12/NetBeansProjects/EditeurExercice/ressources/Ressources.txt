@@ -1,0 +1,4 @@
+Semestre 1;Communication;Anglais;Algoritmique;Programmation;Mathematiques;
+Semestre 2;Communication;Anglais;Multimedia;Programmation;Reseau;
+Semestre 3;Communication;Marketing;Conduite de projet;Video;Multimedia;
+Semestre 4;Communication;Management;Multimedia;Stage;Projet;

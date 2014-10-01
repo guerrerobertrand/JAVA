@@ -1,0 +1,20 @@
+/Users/AnneT/NetBeansProjects/ListeDeCourses/bin/classes.dex : \
+/Users/AnneT/NetBeansProjects/ListeDeCourses/bin/classes/com/BoutonDeux/BuildConfig.class \
+/Users/AnneT/NetBeansProjects/ListeDeCourses/bin/classes/com/BoutonDeux/Main.class \
+/Users/AnneT/NetBeansProjects/ListeDeCourses/bin/classes/com/BoutonDeux/R$attr.class \
+/Users/AnneT/NetBeansProjects/ListeDeCourses/bin/classes/com/BoutonDeux/R$drawable.class \
+/Users/AnneT/NetBeansProjects/ListeDeCourses/bin/classes/com/BoutonDeux/R$id.class \
+/Users/AnneT/NetBeansProjects/ListeDeCourses/bin/classes/com/BoutonDeux/R$layout.class \
+/Users/AnneT/NetBeansProjects/ListeDeCourses/bin/classes/com/BoutonDeux/R$string.class \
+/Users/AnneT/NetBeansProjects/ListeDeCourses/bin/classes/com/BoutonDeux/R.class \
+/Users/AnneT/NetBeansProjects/ListeDeCourses/bin/classes/com/BoutonDeux/RubriqueFruits.class \
+/Users/AnneT/NetBeansProjects/ListeDeCourses/bin/classes/com/ListeDeCourses/BuildConfig.class \
+/Users/AnneT/NetBeansProjects/ListeDeCourses/bin/classes/com/ListeDeCourses/Main.class \
+/Users/AnneT/NetBeansProjects/ListeDeCourses/bin/classes/com/ListeDeCourses/R$attr.class \
+/Users/AnneT/NetBeansProjects/ListeDeCourses/bin/classes/com/ListeDeCourses/R$drawable.class \
+/Users/AnneT/NetBeansProjects/ListeDeCourses/bin/classes/com/ListeDeCourses/R$id.class \
+/Users/AnneT/NetBeansProjects/ListeDeCourses/bin/classes/com/ListeDeCourses/R$layout.class \
+/Users/AnneT/NetBeansProjects/ListeDeCourses/bin/classes/com/ListeDeCourses/R$string.class \
+/Users/AnneT/NetBeansProjects/ListeDeCourses/bin/classes/com/ListeDeCourses/R.class \
+/Users/AnneT/NetBeansProjects/ListeDeCourses/bin/classes/com/ListeDeCourses/RubriqueFruits.class \
+/Applications/NetBeans/android-sdk-macosx/tools/support/annotations.jar \
