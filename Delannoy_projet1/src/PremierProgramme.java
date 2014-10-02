@@ -1,7 +1,7 @@
 
 public class PremierProgramme {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//System.out.println("Mon premier programme Java");
 	
@@ -11,10 +11,10 @@ public class PremierProgramme {
 		//Récupération de saisie Clavier (classe Clavier.java) ? Classe Scanner
 		//Types primitifs
 		//opérateurs, expressions
-/*
+
  * ****************************************************************************************		
- */
-/*		Scanner sc=new Scanner(System.in);
+ 
+		Scanner sc=new Scanner(System.in);
 		
 		int n;
 		double x;
@@ -32,11 +32,11 @@ public class PremierProgramme {
 		
 		resultat=var+y;
 		System.out.println("le résultat est : "+resultat);
-*/
-/*
+
+
  * *****************************************************************************************		
- */
-/*		//Calcul de racines carrées
+ 
+		//Calcul de racines carrées
 		//Classe qui utilise Clavier.java
 		
 		final int NFOIS=5; //la variable est figée "final", ne doit pas être redéfinie, ici est une  constante symbolique
@@ -58,10 +58,10 @@ public class PremierProgramme {
 			}
  		}
 		System.out.println("FIN DU PROGRAMME");		
-	*/
-/*
+	
+
 		 * *****************************************************************************************		
-*/
+
 // Chapitre 4 = Les opérateurs et expressions, faire les exercices.
 		
 		int n;
@@ -98,7 +98,7 @@ public class PremierProgramme {
 		
 		
 		
-	}
+	}*/
 
 }
 

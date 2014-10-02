@@ -167,7 +167,7 @@ public class Chapitre5_boucles {
 					
 	}*/
 
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		
-	}
+	}*/
 }

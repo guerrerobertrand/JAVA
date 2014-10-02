@@ -50,6 +50,72 @@ public class Exercices_Chapitre1 {
 	    *++i => valeur de i après incrémentation, ex: si i=5, alors n=++i-5 => n=1;
 	    *i++ => valeur de i avant incrémentation, ex: si i=5, alors n=i++-5 => n=0;
 	    *
+	    *********** IMPORTANT****************
+	    *exemple =
+	    *n= p = 0 ;
+		*while (n<=8) n+= p++ ;
+		*
+		*n=0
+		*p=0
+		*p++ ; p=1
+		*n+=p; n=1
+		*
+		*p++ ; p=2		
+		*n+=p; n=3
+		*
+		*p++ ; p=3
+		*n+=p; n=6
+		*
+		*p++ ; p=4
+		*n+=p; n=10
+		*
+		*n>8 donc arrêt de la boucle
+		*
+		*sachant que dans n+=p++, on fait d'abord p++ (de droite a gauche!)
+	    *
+	    *************************************
+	    *
+	    *while (p<=5) n+= p++ ;
+		*
+		*n=0
+		*p=0
+		*p++ ; p=1
+		*n+=p; n=1
+		*
+		*p++ ; p=2		
+		*n+=p; n=3
+		*
+		*p++ ; p=3
+		*n+=p; n=6
+		*
+		*p++ ; p=4
+		*n+=p; n=10
+		*
+		*p++ ; p=5
+	    *n+=p ; n=15
+		*
+	    *************************************
+	    *
+	    *while (p<=5) n+= ++p ;
+		*
+		*n=0
+		*p=0
+		*++p ; p=1
+		*n+=p; n=2
+		*
+		*++p ; p=2		
+		*n+=p; n=4
+		*
+		*++p ; p=3
+		*n+=p; n=7
+		*
+		*++p ; p=4
+		*n+=p; n=11
+		*
+		*++p ; p=5
+	    *n+=p ; n=16
+
+	    *
 	    */
 
 	 int i, j, n ;
@@ -69,5 +135,22 @@ public class Exercices_Chapitre1 {
 	    i = 3 ; j = 5 ; n = i *= --j ;
 	    System.out.println ("E : i = " + i + "  j = " + j + "  n = " + n) ;
 	  
+	    
+	    //exemple
+	    int a,b;
+
+	    b=0;
+
+	    a = b++;
+	    System.out.println(a); // 0
+	    System.out.println(b); // 1
+
+	    b=0;
+
+	    a = ++b;
+	    System.out.println(a); // 1
+	    System.out.println(b); // 1
+	    
+	    
 	  }
 }
