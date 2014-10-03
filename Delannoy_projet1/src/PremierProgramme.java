@@ -100,6 +100,30 @@ public class PremierProgramme {
 		
 	}*/
 
+/*	static String texte="alfred";
+	
+	static void imprimeTexte(){
+		String texte="jules";
+		System.out.println(texte + " après jules");
+		texte="dupont";
+		System.out.println(texte + " après dupont");
+	}
+	public static void main (String[]args){
+		System.out.println(texte + " main, avant jules");
+		imprimeTexte();
+		System.out.println(texte + " main après dupont");
+	}
+*/
+	public static void main (String[]args){
+		
+		int somme=0;
+		for(int i=1; i<=10;i=i+1){
+			somme=i;
+			System.out.println(somme);
+		}
+		
+	}
+	
 }
 
 
