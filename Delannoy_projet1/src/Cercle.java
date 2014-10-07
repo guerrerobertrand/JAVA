@@ -1,4 +1,4 @@
-
+/*
 public class Cercle {
 
 	public Cercle(int x, int y, float rayon){
@@ -22,3 +22,4 @@ public class Cercle {
 	private float rayon; // Rayon du cercle
 	
 }
+*/

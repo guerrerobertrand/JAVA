@@ -1,4 +1,4 @@
-
+/*
 public class Point { //instructions de définition de champs et des méthodes de la classe
 
 		private int x;	//abscisse
@@ -46,3 +46,4 @@ public class Point { //instructions de définition de champs et des méthodes de l
 }
 
 
+*/

@@ -1,4 +1,4 @@
-
+/*
 public class Chapitre6_classes_et_objets {
 
 	public static void main(String[] args) {
@@ -21,3 +21,4 @@ public class Chapitre6_classes_et_objets {
 	}
 
 }
+*/
