@@ -1,8 +1,8 @@
-
+/*
 public class Exercices_Chapitre3 {
 
 	public static void main(String[] args) {
-/*		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
 
 	Point a = new Point(3);
 	a.affiche();
@@ -55,9 +55,9 @@ class Ident{
 	}
 	
 	
-}*/
+}
 
-/*class Point{
+class Point{
 		
 	public static int origineInit=0;
 	public static int origineCourante;
@@ -90,7 +90,7 @@ class Ident{
 		private int x;
 		private int t;	
 	}
-*/
+
 		Point a = new Point(1, 3) ;
 		Point b = new Point(4, 8) ;
 		a.affiche() ; b.affiche() ;
@@ -150,3 +150,4 @@ class Ident{
 	
 
 
+*/
