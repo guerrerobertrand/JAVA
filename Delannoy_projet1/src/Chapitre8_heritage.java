@@ -1,4 +1,4 @@
-// Exemple de création et d'utilisation d'une classe dérivée
+/*// Exemple de création et d'utilisation d'une classe dérivée
 // ici classe PointCol dérivée de Point, on utilise les méthodes de Point avec les objets pc
 public class Chapitre8_heritage {
 	public static void main(String[] args) {
@@ -62,3 +62,4 @@ class PointCol extends Point{
 }
 
 
+*/
