@@ -28,6 +28,9 @@ public class FenetreA extends JFrame {
 	private boolean backX, backY;
 	private int x, y;
 	
+	//avec des Threads
+	private Thread t;
+	
 	
 	public FenetreA(){
 		this.setTitle("Animation SDZ");
@@ -199,13 +202,29 @@ public class FenetreA extends JFrame {
 	
 	
 	
-	// Classe interne qui écoute notre premier bouton
+/*	// Classe interne qui écoute notre premier bouton
 	class BoutonListener implements ActionListener {
 		public void actionPerformed(ActionEvent arg0){
 		animated = true;
 		bouton.setEnabled(false);
 		bouton2.setEnabled(true);
 		go();
+		//Redéfinition de la méthode actionPerformed()
+		//public void actionPerformed(ActionEvent arg0){
+		//	label.setText("Vous avez cliqué sur le bouton 1");
+		}
+	}*/
+	
+	
+	// Classe interne qui écoute notre premier bouton, avec des Thread
+	public	class BoutonListener implements ActionListener {
+		public void actionPerformed(ActionEvent arg0){
+		animated = true;
+		t = new Thread(new PlayAnimation());
+		t.start();
+		bouton.setEnabled(false);
+		bouton2.setEnabled(true);
+		
 		//Redéfinition de la méthode actionPerformed()
 		//public void actionPerformed(ActionEvent arg0){
 		//	label.setText("Vous avez cliqué sur le bouton 1");
@@ -221,6 +240,12 @@ public class FenetreA extends JFrame {
 			bouton.setEnabled(true);
 			bouton2.setEnabled(false);
 			
+		}
+	}
+	
+	class PlayAnimation implements Runnable{
+		public void run(){
+			go();
 		}
 	}
 	
