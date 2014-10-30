@@ -39,16 +39,16 @@ public class Classe1_Chapitre26 {
 		//fenF.setVisible(true);
 		
 		// JCheckBox : Cases à cocher
-		//FenetreG fenG = new FenetreG();
-		//fenG.setVisible(true);
+		FenetreG fenG = new FenetreG();
+		fenG.setVisible(true);
 		
 		// JRadioButton
 		//FenetreH fenH = new FenetreH();
 		//fenH.setVisible(true);
 
 		// JTextField et JFormattedTextField
-		FenetreI fenI = new FenetreI();
-		fenI.setVisible(true);
+		//FenetreI fenI = new FenetreI();
+		//fenI.setVisible(true);
 
 		/*// Vérifier l'intégrité des données utilisateur:
 		- tester chaque numéro
