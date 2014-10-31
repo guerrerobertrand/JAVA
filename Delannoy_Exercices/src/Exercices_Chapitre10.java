@@ -1,4 +1,7 @@
-import java.awt.FlowLayout;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -23,8 +26,14 @@ public class Exercices_Chapitre10 {
 //		Fenetre114 fen114 = new Fenetre114(libelles);
 //		fen114.setVisible(true);
 		
-		Fenetre115 fen115 = new Fenetre115();
-		fen115.setVisible(true);
+//		Fenetre115 fen115 = new Fenetre115();
+//		fen115.setVisible(true);
+
+//		Fenetre116 fen116 = new Fenetre116();
+//		fen116.setVisible(true);
+		
+		Fenetre117 fen117 = new Fenetre117();
+		fen117.setVisible(true);
 		
 	}
 }	
@@ -180,7 +189,7 @@ public class Exercices_Chapitre10 {
 }
 */
 
-//EXERCICE 115 = JTextField, FlowLayout, JLabel,...
+/*//EXERCICE 115 = JTextField, FlowLayout, JLabel,...
 	class Fenetre115 extends JFrame implements ActionListener{
 	
 		public Fenetre115(){
@@ -192,24 +201,23 @@ public class Exercices_Chapitre10 {
 			setSize(400,340);
 						
 			//conteneur
-			setLayout(new FlowLayout());
+			Container contenu=getContentPane();
+			contenu.setLayout(new FlowLayout());
 			
-			// boutons
-			calcul = new JButton("CALCUL");
-			pan.add(calcul,"South");
-			calcul.addActionListener(this);
 			
-			//panneau
-			pan = new JPanel();
-	
 			// JLabel et JTextField et venements 
-			nombre=new JLabel("Nombre :");
-			pan.add(nombre);
-			texte = new JTextField();
+			nombre=new JLabel("Nombre = ");
+			contenu.add(nombre);
+			texte = new JTextField(10);
 			texte.setEditable(true);
-			pan.add(texte);
+			contenu.add(texte);
+			// bouton
+			calcul = new JButton("CALCUL");
+			contenu.add(calcul,"South");
+			calcul.addActionListener(this);
+
 			carre=new JLabel("Carr = ");
-			pan.add(carre);
+			contenu.add(carre);
 			
 		
 		
@@ -218,10 +226,203 @@ public class Exercices_Chapitre10 {
 		public void actionPerformed(ActionEvent ev){
 			// on attrape la source
 			Object source = ev.getSource();
+			//System.out.println("Action sur :"+source);
+			if(ev.getSource()==calcul)
+				try{
+					String nombre=texte.getText();
+					int n=Integer.parseInt(nombre);
+					long resultat=(long)n*(long)n;
+					carre.setText((etiqCarre)+resultat);
+				}catch(NumberFormatException e){
+					nombre.setText(etiqNombre);
+					carre.setText(etiqCarre);
+				}
 		}
 		
 		private JButton calcul;
-		private JPanel pan;
 		private JLabel nombre, carre;
 		private JTextField texte;
+		static private String etiqNombre="Nombre = ", etiqCarre="Carr = ";
 }
+*/
+
+
+/*//EXERCICE 116 = avec FocusListener, et mthode valdiate(), JTextField, FlowLayout, JLabel,...
+	class Fenetre116 extends JFrame implements ActionListener, FocusListener{
+	
+		public Fenetre116(){
+			
+			//fentre
+			setTitle("champ de Texte");
+			setDefaultCloseOperation(EXIT_ON_CLOSE);
+			setLocationRelativeTo(null);
+			setSize(400,100);
+						
+			//conteneur
+			Container contenu=getContentPane();
+			contenu.setLayout(new FlowLayout());
+			
+			
+			// JLabel et JTextField et venements 
+			nombre=new JLabel("Nombre = ");
+			contenu.add(nombre);
+			texte = new JTextField(10);
+			//texte.setEditable(true);
+			contenu.add(texte);
+			texte.addFocusListener(this); //pour la perte de Focus
+			texte.addActionListener(this); // pour la validation
+
+			carre=new JLabel("Carr = ");
+			contenu.add(carre);
+	
+		}
+
+		public void focusLost(FocusEvent fe){
+			actualise();
+		}
+		public void focusGained(FocusEvent fe){
+			
+		}
+		
+		public void actionPerformed(ActionEvent ev){
+			actualise();
+		}
+
+		public void actualise(){
+			try{
+				String nombre=texte.getText();
+				int n=Integer.parseInt(nombre);
+				long resultat=(long)n*(long)n;
+				carre.setText((etiqCarre)+resultat);
+			}catch(NumberFormatException e){
+				nombre.setText(etiqNombre);
+				carre.setText(etiqCarre);
+			}
+		}
+		
+		private JLabel nombre, carre;
+		private JTextField texte;
+		static private String etiqNombre="Nombre = ", etiqCarre="Carr = ";
+}
+*/
+
+/**
+ * EXERCICE 120 = Synthse Chapitre 10 : une pendule...
+ */
+
+class Fenetre117 extends JFrame implements ActionListener{
+	public Fenetre117(){
+		setSize(500,500);
+		setTitle("Ma Fentre Pendule");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
+
+		//conteneur
+		Container contenu = getContentPane();
+		panControles=new JPanel();
+		contenu.add(panControles, "North");
+		
+		saisieHeure=new JTextField(5);
+		panControles.add(saisieHeure);
+		
+		labHeure=new JLabel(" Heures");
+		panControles.add(labHeure);
+		
+		saisieMinute=new JTextField(5);
+		panControles.add(saisieMinute);
+		
+		labMinute=new JLabel(" Minutes");
+		panControles.add(labMinute);
+		
+		boutHeure=new JButton("Mise ˆ l'heure");
+		panControles.add(boutHeure);
+		boutHeure.addActionListener(this);
+	
+		//la pendule
+		panPendule = new PanPendule(this);
+		contenu.add(panPendule);
+		panPendule.setBackground(Color.white);
+	}
+	
+	public int getMinutes(){
+		return minutes;
+	}
+	public int getHeures(){
+		return heures;
+	}
+	
+	public void actionPerformed(ActionEvent ev){
+		int h,m;
+		
+		if(ev.getSource() == boutHeure){
+			try{
+				String chHeures=saisieHeure.getText();
+				h=Integer.parseInt(chHeures);
+			}catch(NumberFormatException ex){
+				h=-1; // on force une valeur invalide
+				saisieHeure.setText("");
+			}
+			try{
+				String chMinutes=saisieMinute.getText();
+				m=Integer.parseInt(chMinutes);
+			}catch(NumberFormatException e){
+				m=-1; // idem valeur invalide
+				saisieMinute.setText("");
+			}
+				//////////
+			/// Si les valeurs sont valides(tests) on les place dans les champs minutes et heures et on force le dessin
+			if((h>=0) && (h<24) && (m>=0) && (m<60)){
+				heures=h;
+				minutes=m;
+				repaint();
+			}
+			else{ // affiche des 0 ?
+				saisieMinute.setText(""+minutes);
+				saisieHeure.setText(""+heures);
+			}
+			
+			
+		}
+}
+	
+	private JButton boutHeure;
+	private JLabel labHeure, labMinute;
+	private JTextField saisieHeure, saisieMinute;
+	private JPanel panControles;
+	private int minutes=0, heures=0;
+	private PanPendule panPendule;
+}
+
+class PanPendule extends JPanel{
+	public PanPendule(Fenetre117 fenP){
+		this.fenP=fenP;
+	}
+	public void paintComponent(Graphics g){
+		super.paintComponent(g);
+		//dessin du Cercle
+		Dimension dim = getSize();
+		int largeur = dim.width, hauteur= dim.height;
+		boolean panTropLarge = (largeur>hauteur);
+		int xCentre = largeur/2, yCentre = hauteur/2;
+		int rayon ;
+		if(panTropLarge)
+			rayon = hauteur/2 - 2;
+		else
+			rayon = largeur/2 - 2;
+		g.drawOval(xCentre-rayon, yCentre-rayon, 2*rayon, 2*rayon);
+		
+		//dessin des aiguilles...
+		//la grande
+		int minutes = fenP.getMinutes();
+		double angle = Math.PI/2*(1. - minutes/15.);
+		g.drawLine(xCentre, yCentre, (int)(xCentre+rayon*Math.cos(angle)),(int)(yCentre-rayon*Math.sin(angle)));
+		
+		//la petite
+		int heures=fenP.getHeures();
+		angle= Math.PI/2*(1. - heures/3. - minutes/180.);
+		g.drawLine(xCentre, yCentre,(int)(xCentre+rayon/2.*Math.cos(angle)),(int)(yCentre-rayon/2.*Math.sin(angle)));
+	}
+	private Fenetre117 fenP;
+}
+
+
