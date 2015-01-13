@@ -1,24 +1,26 @@
 
 public class Exercices_Chapitre5 {
-/*
- * EXERCICE 60
- * 
+/*// EXERCICE 60
+ 
  
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Point pt1=new Point();
-		pt1.initialise(3,5);
-		System.out.println("Je suis un point de coordonnées : "+pt1.getX()+" et "+pt1.getY());
+		Point p1=new Point();
+		p1.initialise(3,10);
+		System.out.println("les coordonnées de Point sont : x= "+p1.getX()+" et y= "+p1.getY());
 		
-		PointA pt2=new PointA();
-		pt2.initialise(6,9);
-		pt2.affiche();
-		pt2.deplace(1, -3);
-		pt2.affiche();
-		
+		PointA p=new PointA();
+		p.initialise(5,9);
+		p.affiche();
 	}
 
+}
+
+class PointA extends Point{
+	public void affiche(){
+		System.out.println("les coordonnées de PointA sont : x= "+getX()+" et y= "+getY());
+	}
 }
 
 class Point{
@@ -40,16 +42,9 @@ class Point{
 		return y;
 	}
 	private int x, y;
-}
-
-class PointA extends Point{
-	
-	public void affiche(){
-		System.out.println("Je suis un point de coordonnées : "+getX()+" et "+getY());
-	}
-	
-	
 }*/
+
+	
 	
 	// EXERCICE 61
 	
